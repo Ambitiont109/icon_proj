@@ -24,7 +24,8 @@ namespace WebRider
 
         private void administrator_Click(object sender, EventArgs e)
         {
-
+            LoginForm lf = new LoginForm();
+            lf.Show();
         }
 
         private void student_login_Click(object sender, EventArgs e)
