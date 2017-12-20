@@ -7,3 +7,4 @@ C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.exe
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.pdb
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.StartForm.resources
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.Attendance.resources

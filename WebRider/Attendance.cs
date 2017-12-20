@@ -16,5 +16,14 @@ namespace WebRider
         {
             InitializeComponent();
         }
+        private void load_attendance_form(object sender, EventArgs e)
+        {
+            current_time_label.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            current_time_label.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

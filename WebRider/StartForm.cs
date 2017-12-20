@@ -21,5 +21,17 @@ namespace WebRider
         {
 
         }
+
+        private void administrator_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void student_login_Click(object sender, EventArgs e)
+        {
+            Attendance attendance_form = new Attendance();
+            attendance_form.Show();
+            attendance_form.WindowState = FormWindowState.Maximized;
+        }
     }
 }

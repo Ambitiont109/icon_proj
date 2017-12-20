@@ -40,7 +40,7 @@
             this.student_login.TabIndex = 0;
             this.student_login.Text = "Student Login";
             this.student_login.UseVisualStyleBackColor = true;
-            this.student_login.Click += new System.EventHandler(this.Form1_Load);
+            this.student_login.Click += new System.EventHandler(this.student_login_Click);
             // 
             // administrator
             // 
@@ -50,6 +50,7 @@
             this.administrator.TabIndex = 0;
             this.administrator.Text = "Administrator";
             this.administrator.UseVisualStyleBackColor = true;
+            this.administrator.Click += new System.EventHandler(this.administrator_Click);
             // 
             // StartForm
             // 
