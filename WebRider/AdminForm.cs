@@ -137,13 +137,16 @@ namespace WebRider
             reader = cmd.ExecuteReader();
             cnn.Close();
             Console.WriteLine(sql);
-
+            load_table();
         }
 
         private void add_ns_btn_Click(object sender, EventArgs e)
         {
             AddStudent ans = new AddStudent(this.adminname);
-            ans.Show();
+            if(ans.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Add Student Successfully");
+            }
         }
 
         private void del_s_btn_Click(object sender, EventArgs e)

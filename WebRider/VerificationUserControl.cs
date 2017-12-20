@@ -24,14 +24,11 @@ namespace WebRider
             get { return this.isVerificationComplete; }
             set
             {
-                if (value != this.isVerificationComplete)
+                this.isVerificationComplete = value;
+                if (this.VerificationStatusChanged != null)
                 {
-                    this.isVerificationComplete = value;
-                    if (this.VerificationStatusChanged != null)
-                    {
-                        this.VerificationStatusChanged(this, new StatusChangedEventArgs(value));
-                    }
-                }
+                    this.VerificationStatusChanged(this, new StatusChangedEventArgs(value));
+                }                
             }
 
         }
@@ -226,14 +223,6 @@ namespace WebRider
             {
                 FingerPrintPicture.Image = new Bitmap(bitmap, FingerPrintPicture.Size);	// fit the image into the picture box
             }));
-        }
-
-        private void ClearFPSamples_Click(object sender, EventArgs e)
-        {
-            this.IsVerificationComplete = false;
-            SetPrompt("Give fingerprint sample.");
-            FingerPrintPicture.Image = null;
-            Start();
         }
     }
 }

@@ -17,8 +17,9 @@ namespace WebRider
         public Attendance()
         {
             InitializeComponent();
-            ValidateUser();
             verificationUserControl.VerificationStatusChanged += new StatusChangedEventHandler(on_status_changed);
+            ValidateUser();
+            
         }
         void ValidateUser()
         {
@@ -40,21 +41,6 @@ namespace WebRider
                         //byte[] fingerPrint = (byte[])reader["Student_FingerPrints"];
                         String student_id = reader.GetString("Student_ID");
                         verificationUserControl.Samples.Add(new DPFP.Template(new MemoryStream(fingerPrint)), student_id);
-                        if (student_id == "2")
-                        {
-                            
-             /*               
-                            OpenFileDialog open = new OpenFileDialog();
-                            // image filters  
-                            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-                            if (open.ShowDialog() == DialogResult.OK)
-                            {
-                                // display image in picture box  
-                                pictureBox1.Image = new Bitmap(open.FileName);
-                                // image file path  
-                                textBox1.Text = open.FileName;
-                            }*/
-                        }
                     }
 
                 }
@@ -105,9 +91,8 @@ namespace WebRider
                     String Accound_Status = reader.GetString("Account_Status");
                     String Student_photo_path = reader.GetString("Student_Photo");
 
-                    //pictureBox1.Image = new Bitmap("Photos//"+Student_photo_path);
-                    //pictureBox1.Image = new Bitmap("C:\\Users\\Alexandr\\Downloads\\Employers\\webrider\\MYSOULTION\\AttendanceSystem\\WebRider\\Photos\\alex.jpg");
-                    pictureBox1.Image = new Bitmap("C:\\Users\\Alexandr\\Downloads\\Employers\\webrider\\MYSOULTION\\AttendanceSystem\\WebRider\\Photos\\"+Student_photo_path);
+                    string path = Path.Combine(Environment.CurrentDirectory, @"Photos\", Student_photo_path);
+                    pictureBox1.Image = new Bitmap(path);
                     textBox1.Text = Student_Id;
                     textBox2.Text = student_name;
                     textBox3.Text = student_phone;
@@ -119,6 +104,12 @@ namespace WebRider
             {
                 MessageBox.Show("Error in Loadin Database:\n" + ex.ToString());
             }
+        }
+
+        private void admin_link_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Show();
         }
     }
 }
