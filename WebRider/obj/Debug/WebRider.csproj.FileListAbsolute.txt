@@ -38,6 +38,7 @@ C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\bin\Debug\DPFPC
 C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\bin\Debug\DPFPShrXTypeLibNET.dll
 C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\bin\Debug\MySql.Data.xml
 C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\bin\Debug\SkinSoft.VisualStyler.xml
+<<<<<<< HEAD
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\WebRider.exe.config
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\WebRider.exe
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\WebRider.pdb
@@ -63,3 +64,6 @@ C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRi
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.csproj.GenerateResource.Cache
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.exe
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.pdb
+=======
+C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\obj\Debug\WebRider.AddStudent.resources
+>>>>>>> ea4f940971c3bea95352830832fe3ecd6fcac36b
