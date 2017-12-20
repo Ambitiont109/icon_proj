@@ -30,6 +30,13 @@
         {
             this.admin_form = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.s_table = new System.Windows.Forms.DataGridView();
+            this.s = new System.Windows.Forms.CheckBox();
+            this.f = new System.Windows.Forms.CheckBox();
+            this.th = new System.Windows.Forms.CheckBox();
+            this.w = new System.Windows.Forms.CheckBox();
+            this.t = new System.Windows.Forms.CheckBox();
+            this.m = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cancel1_btn = new System.Windows.Forms.Button();
@@ -45,38 +52,41 @@
             this.edit_s_btn = new System.Windows.Forms.Button();
             this.del_s_btn = new System.Windows.Forms.Button();
             this.add_ns_btn = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.m = new System.Windows.Forms.CheckBox();
-            this.t = new System.Windows.Forms.CheckBox();
-            this.w = new System.Windows.Forms.CheckBox();
-            this.th = new System.Windows.Forms.CheckBox();
-            this.f = new System.Windows.Forms.CheckBox();
-            this.s = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.host_input = new System.Windows.Forms.TextBox();
-            this.port_input = new System.Windows.Forms.TextBox();
-            this.db_user_input = new System.Windows.Forms.TextBox();
-            this.db_pass_input = new System.Windows.Forms.TextBox();
-            this.db_name_input = new System.Windows.Forms.TextBox();
-            this.ts_btn = new System.Windows.Forms.Button();
             this.ss_btn = new System.Windows.Forms.Button();
-            this.detects_btn = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.ts_btn = new System.Windows.Forms.Button();
+            this.db_name_input = new System.Windows.Forms.TextBox();
+            this.db_pass_input = new System.Windows.Forms.TextBox();
+            this.db_user_input = new System.Windows.Forms.TextBox();
+            this.port_input = new System.Windows.Forms.TextBox();
+            this.host_input = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.admin_user = new System.Windows.Forms.TextBox();
-            this.admin_pass = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.detects_btn = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.admin_save_btn = new System.Windows.Forms.Button();
+            this.admin_pass = new System.Windows.Forms.TextBox();
+            this.admin_user = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_form.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.s_table)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -96,6 +106,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.s_table);
             this.tabPage1.Controls.Add(this.s);
             this.tabPage1.Controls.Add(this.f);
             this.tabPage1.Controls.Add(this.th);
@@ -117,7 +128,6 @@
             this.tabPage1.Controls.Add(this.edit_s_btn);
             this.tabPage1.Controls.Add(this.del_s_btn);
             this.tabPage1.Controls.Add(this.add_ns_btn);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -126,6 +136,84 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Manage Students";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // s_table
+            // 
+            this.s_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.s_table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9});
+            this.s_table.Location = new System.Drawing.Point(72, 29);
+            this.s_table.Name = "s_table";
+            this.s_table.Size = new System.Drawing.Size(1063, 236);
+            this.s_table.TabIndex = 23;
+            // 
+            // s
+            // 
+            this.s.AutoSize = true;
+            this.s.Location = new System.Drawing.Point(923, 339);
+            this.s.Name = "s";
+            this.s.Size = new System.Drawing.Size(68, 17);
+            this.s.TabIndex = 22;
+            this.s.Text = "Saturday";
+            this.s.UseVisualStyleBackColor = true;
+            // 
+            // f
+            // 
+            this.f.AutoSize = true;
+            this.f.Location = new System.Drawing.Point(802, 433);
+            this.f.Name = "f";
+            this.f.Size = new System.Drawing.Size(54, 17);
+            this.f.TabIndex = 21;
+            this.f.Text = "Friday";
+            this.f.UseVisualStyleBackColor = true;
+            // 
+            // th
+            // 
+            this.th.AutoSize = true;
+            this.th.Location = new System.Drawing.Point(802, 410);
+            this.th.Name = "th";
+            this.th.Size = new System.Drawing.Size(70, 17);
+            this.th.TabIndex = 20;
+            this.th.Text = "Thursday";
+            this.th.UseVisualStyleBackColor = true;
+            // 
+            // w
+            // 
+            this.w.AutoSize = true;
+            this.w.Location = new System.Drawing.Point(802, 387);
+            this.w.Name = "w";
+            this.w.Size = new System.Drawing.Size(83, 17);
+            this.w.TabIndex = 19;
+            this.w.Text = "Wednesday";
+            this.w.UseVisualStyleBackColor = true;
+            // 
+            // t
+            // 
+            this.t.AutoSize = true;
+            this.t.Location = new System.Drawing.Point(802, 364);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(67, 17);
+            this.t.TabIndex = 18;
+            this.t.Text = "Tuesday";
+            this.t.UseVisualStyleBackColor = true;
+            // 
+            // m
+            // 
+            this.m.AutoSize = true;
+            this.m.Location = new System.Drawing.Point(802, 341);
+            this.m.Name = "m";
+            this.m.Size = new System.Drawing.Size(64, 17);
+            this.m.TabIndex = 17;
+            this.m.Text = "Monday";
+            this.m.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -261,27 +349,6 @@
             this.add_ns_btn.UseVisualStyleBackColor = true;
             this.add_ns_btn.Click += new System.EventHandler(this.add_ns_btn_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 9;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(102, 72);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(991, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.ss_btn);
@@ -304,6 +371,106 @@
             this.tabPage2.Text = "Database Settings";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // ss_btn
+            // 
+            this.ss_btn.Location = new System.Drawing.Point(247, 305);
+            this.ss_btn.Name = "ss_btn";
+            this.ss_btn.Size = new System.Drawing.Size(134, 23);
+            this.ss_btn.TabIndex = 11;
+            this.ss_btn.Text = "Save Settings";
+            this.ss_btn.UseVisualStyleBackColor = true;
+            this.ss_btn.Click += new System.EventHandler(this.ss_btn_Click);
+            // 
+            // ts_btn
+            // 
+            this.ts_btn.Location = new System.Drawing.Point(247, 258);
+            this.ts_btn.Name = "ts_btn";
+            this.ts_btn.Size = new System.Drawing.Size(134, 23);
+            this.ts_btn.TabIndex = 10;
+            this.ts_btn.Text = "Test Connection";
+            this.ts_btn.UseVisualStyleBackColor = true;
+            this.ts_btn.Click += new System.EventHandler(this.ts_btn_Click);
+            // 
+            // db_name_input
+            // 
+            this.db_name_input.Location = new System.Drawing.Point(247, 194);
+            this.db_name_input.Name = "db_name_input";
+            this.db_name_input.Size = new System.Drawing.Size(178, 20);
+            this.db_name_input.TabIndex = 9;
+            // 
+            // db_pass_input
+            // 
+            this.db_pass_input.Location = new System.Drawing.Point(247, 163);
+            this.db_pass_input.Name = "db_pass_input";
+            this.db_pass_input.Size = new System.Drawing.Size(178, 20);
+            this.db_pass_input.TabIndex = 8;
+            // 
+            // db_user_input
+            // 
+            this.db_user_input.Location = new System.Drawing.Point(247, 133);
+            this.db_user_input.Name = "db_user_input";
+            this.db_user_input.Size = new System.Drawing.Size(178, 20);
+            this.db_user_input.TabIndex = 7;
+            // 
+            // port_input
+            // 
+            this.port_input.Location = new System.Drawing.Point(247, 99);
+            this.port_input.Name = "port_input";
+            this.port_input.Size = new System.Drawing.Size(178, 20);
+            this.port_input.TabIndex = 6;
+            // 
+            // host_input
+            // 
+            this.host_input.Location = new System.Drawing.Point(247, 71);
+            this.host_input.Name = "host_input";
+            this.host_input.Size = new System.Drawing.Size(178, 20);
+            this.host_input.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(125, 197);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Database Name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(125, 166);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Password";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(125, 136);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Username";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(125, 102);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Port";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(125, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Hostname";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label13);
@@ -315,6 +482,35 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Detect Scanner";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(254, 129);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "No Detected";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(254, 95);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "OK";
+            // 
+            // detects_btn
+            // 
+            this.detects_btn.Location = new System.Drawing.Point(92, 90);
+            this.detects_btn.Name = "detects_btn";
+            this.detects_btn.Size = new System.Drawing.Size(119, 23);
+            this.detects_btn.TabIndex = 0;
+            this.detects_btn.Text = "Detect Scanner";
+            this.detects_btn.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
@@ -330,203 +526,29 @@
             this.tabPage4.Text = "Admin Account";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // m
+            // admin_save_btn
             // 
-            this.m.AutoSize = true;
-            this.m.Location = new System.Drawing.Point(802, 341);
-            this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(64, 17);
-            this.m.TabIndex = 17;
-            this.m.Text = "Monday";
-            this.m.UseVisualStyleBackColor = true;
+            this.admin_save_btn.Location = new System.Drawing.Point(182, 184);
+            this.admin_save_btn.Name = "admin_save_btn";
+            this.admin_save_btn.Size = new System.Drawing.Size(75, 23);
+            this.admin_save_btn.TabIndex = 4;
+            this.admin_save_btn.Text = "Save";
+            this.admin_save_btn.UseVisualStyleBackColor = true;
+            this.admin_save_btn.Click += new System.EventHandler(this.admin_save_btn_Click);
             // 
-            // t
+            // admin_pass
             // 
-            this.t.AutoSize = true;
-            this.t.Location = new System.Drawing.Point(802, 364);
-            this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(67, 17);
-            this.t.TabIndex = 18;
-            this.t.Text = "Tuesday";
-            this.t.UseVisualStyleBackColor = true;
+            this.admin_pass.Location = new System.Drawing.Point(216, 117);
+            this.admin_pass.Name = "admin_pass";
+            this.admin_pass.Size = new System.Drawing.Size(161, 20);
+            this.admin_pass.TabIndex = 3;
             // 
-            // w
+            // admin_user
             // 
-            this.w.AutoSize = true;
-            this.w.Location = new System.Drawing.Point(802, 387);
-            this.w.Name = "w";
-            this.w.Size = new System.Drawing.Size(83, 17);
-            this.w.TabIndex = 19;
-            this.w.Text = "Wednesday";
-            this.w.UseVisualStyleBackColor = true;
-            // 
-            // th
-            // 
-            this.th.AutoSize = true;
-            this.th.Location = new System.Drawing.Point(802, 410);
-            this.th.Name = "th";
-            this.th.Size = new System.Drawing.Size(70, 17);
-            this.th.TabIndex = 20;
-            this.th.Text = "Thursday";
-            this.th.UseVisualStyleBackColor = true;
-            // 
-            // f
-            // 
-            this.f.AutoSize = true;
-            this.f.Location = new System.Drawing.Point(802, 433);
-            this.f.Name = "f";
-            this.f.Size = new System.Drawing.Size(54, 17);
-            this.f.TabIndex = 21;
-            this.f.Text = "Friday";
-            this.f.UseVisualStyleBackColor = true;
-            // 
-            // s
-            // 
-            this.s.AutoSize = true;
-            this.s.Location = new System.Drawing.Point(923, 339);
-            this.s.Name = "s";
-            this.s.Size = new System.Drawing.Size(68, 17);
-            this.s.TabIndex = 22;
-            this.s.Text = "Saturday";
-            this.s.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(125, 74);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Hostname";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(125, 102);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(26, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Port";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(125, 136);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Username";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(125, 166);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Password";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(125, 197);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Database Name";
-            // 
-            // host_input
-            // 
-            this.host_input.Location = new System.Drawing.Point(247, 71);
-            this.host_input.Name = "host_input";
-            this.host_input.Size = new System.Drawing.Size(178, 20);
-            this.host_input.TabIndex = 5;
-            // 
-            // port_input
-            // 
-            this.port_input.Location = new System.Drawing.Point(247, 99);
-            this.port_input.Name = "port_input";
-            this.port_input.Size = new System.Drawing.Size(178, 20);
-            this.port_input.TabIndex = 6;
-            // 
-            // db_user_input
-            // 
-            this.db_user_input.Location = new System.Drawing.Point(247, 133);
-            this.db_user_input.Name = "db_user_input";
-            this.db_user_input.Size = new System.Drawing.Size(178, 20);
-            this.db_user_input.TabIndex = 7;
-            // 
-            // db_pass_input
-            // 
-            this.db_pass_input.Location = new System.Drawing.Point(247, 163);
-            this.db_pass_input.Name = "db_pass_input";
-            this.db_pass_input.Size = new System.Drawing.Size(178, 20);
-            this.db_pass_input.TabIndex = 8;
-            // 
-            // db_name_input
-            // 
-            this.db_name_input.Location = new System.Drawing.Point(247, 194);
-            this.db_name_input.Name = "db_name_input";
-            this.db_name_input.Size = new System.Drawing.Size(178, 20);
-            this.db_name_input.TabIndex = 9;
-            // 
-            // ts_btn
-            // 
-            this.ts_btn.Location = new System.Drawing.Point(247, 258);
-            this.ts_btn.Name = "ts_btn";
-            this.ts_btn.Size = new System.Drawing.Size(134, 23);
-            this.ts_btn.TabIndex = 10;
-            this.ts_btn.Text = "Test Connection";
-            this.ts_btn.UseVisualStyleBackColor = true;
-            this.ts_btn.Click += new System.EventHandler(this.ts_btn_Click);
-            // 
-            // ss_btn
-            // 
-            this.ss_btn.Location = new System.Drawing.Point(247, 305);
-            this.ss_btn.Name = "ss_btn";
-            this.ss_btn.Size = new System.Drawing.Size(134, 23);
-            this.ss_btn.TabIndex = 11;
-            this.ss_btn.Text = "Save Settings";
-            this.ss_btn.UseVisualStyleBackColor = true;
-            this.ss_btn.Click += new System.EventHandler(this.ss_btn_Click);
-            // 
-            // detects_btn
-            // 
-            this.detects_btn.Location = new System.Drawing.Point(92, 90);
-            this.detects_btn.Name = "detects_btn";
-            this.detects_btn.Size = new System.Drawing.Size(119, 23);
-            this.detects_btn.TabIndex = 0;
-            this.detects_btn.Text = "Detect Scanner";
-            this.detects_btn.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(254, 95);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "OK";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(254, 129);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "No Detected";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(104, 78);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Admin Username";
+            this.admin_user.Location = new System.Drawing.Point(216, 75);
+            this.admin_user.Name = "admin_user";
+            this.admin_user.Size = new System.Drawing.Size(161, 20);
+            this.admin_user.TabIndex = 2;
             // 
             // label15
             // 
@@ -537,29 +559,67 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Admin Password";
             // 
-            // admin_user
+            // label14
             // 
-            this.admin_user.Location = new System.Drawing.Point(216, 75);
-            this.admin_user.Name = "admin_user";
-            this.admin_user.Size = new System.Drawing.Size(161, 20);
-            this.admin_user.TabIndex = 2;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(104, 78);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Admin Username";
             // 
-            // admin_pass
+            // Column1
             // 
-            this.admin_pass.Location = new System.Drawing.Point(216, 117);
-            this.admin_pass.Name = "admin_pass";
-            this.admin_pass.Size = new System.Drawing.Size(161, 20);
-            this.admin_pass.TabIndex = 3;
+            this.Column1.HeaderText = "Student ID";
+            this.Column1.Name = "Column1";
             // 
-            // admin_save_btn
+            // Column2
             // 
-            this.admin_save_btn.Location = new System.Drawing.Point(182, 184);
-            this.admin_save_btn.Name = "admin_save_btn";
-            this.admin_save_btn.Size = new System.Drawing.Size(75, 23);
-            this.admin_save_btn.TabIndex = 4;
-            this.admin_save_btn.Text = "Save";
-            this.admin_save_btn.UseVisualStyleBackColor = true;
-            this.admin_save_btn.Click += new System.EventHandler(this.admin_save_btn_Click);
+            this.Column2.HeaderText = "Student Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 120F;
+            this.Column3.HeaderText = "Student Phone";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 150F;
+            this.Column4.HeaderText = "Student Case Manager";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 110F;
+            this.Column5.HeaderText = "Account Status";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 110;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Student Photo";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 140F;
+            this.Column7.HeaderText = "Student FingerPrints";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 140;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Created_On";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Login Days";
+            this.Column9.Name = "Column9";
             // 
             // AdminForm
             // 
@@ -572,6 +632,7 @@
             this.admin_form.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.s_table)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -595,7 +656,6 @@
         private System.Windows.Forms.Button edit_s_btn;
         private System.Windows.Forms.Button del_s_btn;
         private System.Windows.Forms.Button add_ns_btn;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox account_combo;
         private System.Windows.Forms.TextBox student_case_input;
@@ -631,5 +691,15 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button admin_save_btn;
+        private System.Windows.Forms.DataGridView s_table;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

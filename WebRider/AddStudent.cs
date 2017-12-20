@@ -18,9 +18,11 @@ namespace WebRider
         string db_user_text = "root";
         string db_pass_text = "";
         string db_name_text = "test";
-        public AddStudent()
+        string adminname = null;
+        public AddStudent(string admin_name)
         {
             InitializeComponent();
+            this.adminname = admin_name;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace WebRider
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             string sql = "insert into students_accounts (Student_ID, Student_Name, Student_Phone, Student_Case_Manager, Account_Status, Student_Photo, Student_FingerPrints, Login_Days, Created_On, Created_By) value ('" +
                 student_id_text + "','" + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + "','" + "','"
-                + "','" + thisday.ToString("d") + "','" + l_day + "');";
+                + l_day+ "','" + thisday.ToString("d") + "','" + this.adminname + "');";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             MySqlDataReader reader;

@@ -18,10 +18,33 @@ namespace WebRider
         string db_user_text = "root";
         string db_pass_text = "";
         string db_name_text = "test";
+        string adminname = null;
 
-        public AdminForm()
+        public AdminForm(string admin_name)
         {
             InitializeComponent();
+            this.adminname = admin_name;
+            string sql = "select * from students_accounts ";
+            string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlCommand cmd = new MySqlCommand(sql, cnn);
+            try
+            {
+                cnn.Open();
+                // MessageBox.Show("connection open!");
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    s_table.Rows.Add(reader.GetInt32("Student_ID"), reader.GetString("Student_Name"), reader.GetString("Student_Phone"),
+                        reader.GetString("Student_Case_Manager"), reader.GetString("Account_Status"), reader.GetString("Student_Photo"),
+                        reader.GetString("Student_FingerPrints"), reader.GetString("Created_On").Split(' ')[0], reader.GetString("Login_Days"));
+                }
+                cnn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("not connection");
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -99,8 +122,8 @@ namespace WebRider
                 l_day += "S,";
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             string sql = "insert into students_accounts (Student_Name, Student_Phone, Student_Case_Manager, Account_Status, Student_Photo, Student_FingerPrints, Login_Days, Created_On, Created_By) value ('"
-                + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + "','" + "','"
-                + "','" + thisday.ToString("d") + "','" + l_day + "');";
+                + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + "','" + "','"+
+                l_day + "','" + thisday.ToString("d") + "','" + this.adminname + "');";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             MySqlDataReader reader;
@@ -113,7 +136,7 @@ namespace WebRider
 
         private void add_ns_btn_Click(object sender, EventArgs e)
         {
-            AddStudent ans = new AddStudent();
+            AddStudent ans = new AddStudent(this.adminname);
             ans.Show();
         }
     }

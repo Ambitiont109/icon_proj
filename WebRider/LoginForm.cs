@@ -43,7 +43,7 @@ namespace WebRider
                     if (u_list.ElementAt(i) == username_input.Text)
                         if (p_list.ElementAt(i) == password_input.Text)
                         {
-                            AdminForm af = new AdminForm();
+                            AdminForm af = new AdminForm(username_input.Text);
                             af.Show();
                         }
                 }
