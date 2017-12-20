@@ -24,6 +24,12 @@ namespace WebRider
         {
             InitializeComponent();
             this.adminname = admin_name;
+            load_table();
+        }
+
+        public void load_table()
+        {
+            s_table.Rows.Clear();
             string sql = "select * from students_accounts ";
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             MySqlConnection cnn = new MySqlConnection(connectionString);
@@ -41,7 +47,7 @@ namespace WebRider
                 }
                 cnn.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("not connection");
             }
@@ -123,7 +129,7 @@ namespace WebRider
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             string sql = "insert into students_accounts (Student_Name, Student_Phone, Student_Case_Manager, Account_Status, Student_Photo, Student_FingerPrints, Login_Days, Created_On, Created_By) value ('"
                 + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + "','" + "','"+
-                l_day + "','" + thisday.ToString("d") + "','" + this.adminname + "');";
+                l_day + "','" + thisday.ToString("yyyy-MM-dd") + "','" + this.adminname + "');";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             MySqlDataReader reader;
@@ -155,6 +161,7 @@ namespace WebRider
             reader = cmd.ExecuteReader();
             cnn.Close();
             Console.WriteLine(sql);
+            load_table();
         }
 
         private void edit_s_btn_Click(object sender, EventArgs e)
