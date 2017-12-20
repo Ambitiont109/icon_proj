@@ -8,3 +8,14 @@ C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.pdb
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.StartForm.resources
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.Attendance.resources
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\SkinSoft.VisualStyler.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\SkinSoft.VisualStyler.xml
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPDevNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPEngNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPGuiNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPShrNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPVerNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPCtlXTypeLibNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\bin\Debug\DPFPShrXTypeLibNET.dll
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\WebRider\WebRider\obj\Debug\WebRider.VerificationUserControl.resources
