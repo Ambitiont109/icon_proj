@@ -43,7 +43,7 @@ namespace WebRider
                         if (student_id == "2")
                         {
                             
-                            /*
+             /*               
                             OpenFileDialog open = new OpenFileDialog();
                             // image filters  
                             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
@@ -104,7 +104,9 @@ namespace WebRider
                     String Accound_Status = reader.GetString("Account_Status");
                     String Student_photo_path = reader.GetString("Student_Photo");
 
-                    pictureBox1.Image = new Bitmap(Student_photo_path);
+                    //pictureBox1.Image = new Bitmap("Photos//"+Student_photo_path);
+                    //pictureBox1.Image = new Bitmap("C:\\Users\\Alexandr\\Downloads\\Employers\\webrider\\MYSOULTION\\AttendanceSystem\\WebRider\\Photos\\alex.jpg");
+                    pictureBox1.Image = new Bitmap("C:\\Users\\Alexandr\\Downloads\\Employers\\webrider\\MYSOULTION\\AttendanceSystem\\WebRider\\Photos\\"+Student_photo_path);
                     textBox1.Text = Student_Id;
                     textBox2.Text = student_name;
                     textBox3.Text = student_phone;
