@@ -150,6 +150,7 @@
             this.Column7,
             this.Column8,
             this.Column9});
+            this.s_table.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.s_table.Location = new System.Drawing.Point(72, 29);
             this.s_table.Name = "s_table";
             this.s_table.Size = new System.Drawing.Size(1063, 236);

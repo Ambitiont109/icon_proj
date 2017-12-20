@@ -51,8 +51,6 @@ namespace WebRider
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            
-
             DateTime thisday = DateTime.Today;
             string student_id_text = s_id.Text;
             string student_name_text = s_name.Text;

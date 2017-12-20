@@ -34,6 +34,8 @@ namespace WebRider
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             try
             {
                 cnn.Open();
@@ -41,9 +43,11 @@ namespace WebRider
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    s_table.Columns.Add(chk);
                     s_table.Rows.Add(reader.GetInt32("Student_ID"), reader.GetString("Student_Name"), reader.GetString("Student_Phone"),
                         reader.GetString("Student_Case_Manager"), reader.GetString("Account_Status"), reader.GetString("Student_Photo"),
                         reader.GetString("Student_FingerPrints"), reader.GetString("Created_On").Split(' ')[0], reader.GetString("Login_Days"));
+                    
                 }
                 cnn.Close();
             }
@@ -108,6 +112,10 @@ namespace WebRider
 
         private void save_btn_Click(object sender, EventArgs e)
         {
+            int index = s_table.SelectedRows[0].Index;
+            Console.WriteLine(s_table[0, index].Value.GetType());
+            string value = s_table[0, index].Value.ToString();
+            int id = Int32.Parse(value);
             DateTime thisday = DateTime.Today;
             string student_name_text = student_name_input.Text;
             string student_phone_text = student_phone_input.Text;
@@ -127,9 +135,8 @@ namespace WebRider
             if (s.Checked)
                 l_day += "S,";
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
-            string sql = "insert into students_accounts (Student_Name, Student_Phone, Student_Case_Manager, Account_Status, Student_Photo, Student_FingerPrints, Login_Days, Created_On, Created_By) value ('"
-                + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + "','" + "','"+
-                l_day + "','" + thisday.ToString("yyyy-MM-dd") + "','" + this.adminname + "');";
+            string sql = "update students_accounts set Student_Name='" + student_name_text + "',Student_Phone='" + student_phone_text + "',Student_Case_Manager='" +
+                student_case_text + "',Account_Status='" + account_text + "',Login_Days='" + l_day + "' where Student_ID = " + id+"; ";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             MySqlDataReader reader;
@@ -146,6 +153,7 @@ namespace WebRider
             if(ans.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Add Student Successfully");
+                load_table();
             }
         }
 
