@@ -204,7 +204,7 @@
             // t
             // 
             this.t.AutoSize = true;
-            this.t.Location = new System.Drawing.Point(29, 514);
+            this.t.Location = new System.Drawing.Point(29, 503);
             this.t.Name = "t";
             this.t.Size = new System.Drawing.Size(67, 17);
             this.t.TabIndex = 17;
@@ -224,7 +224,7 @@
             // th
             // 
             this.th.AutoSize = true;
-            this.th.Location = new System.Drawing.Point(132, 514);
+            this.th.Location = new System.Drawing.Point(132, 503);
             this.th.Name = "th";
             this.th.Size = new System.Drawing.Size(70, 17);
             this.th.TabIndex = 19;
@@ -244,7 +244,7 @@
             // s
             // 
             this.s.AutoSize = true;
-            this.s.Location = new System.Drawing.Point(251, 514);
+            this.s.Location = new System.Drawing.Point(251, 503);
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(68, 17);
             this.s.TabIndex = 21;
