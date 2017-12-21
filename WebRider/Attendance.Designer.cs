@@ -84,6 +84,7 @@
             this.admin_link_label.TabIndex = 3;
             this.admin_link_label.TabStop = true;
             this.admin_link_label.Text = "Admin";
+            this.admin_link_label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.admin_link_label_LinkClicked);
             // 
             // textBox1
             // 
@@ -175,7 +176,7 @@
             // 
             // verificationUserControl
             // 
-            this.verificationUserControl.IsVerificationComplete = false;
+            this.verificationUserControl.IsVerificationComplete = true;
             this.verificationUserControl.Location = new System.Drawing.Point(39, 66);
             this.verificationUserControl.Name = "verificationUserControl";
             this.verificationUserControl.Size = new System.Drawing.Size(157, 177);

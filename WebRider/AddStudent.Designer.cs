@@ -39,7 +39,7 @@
             this.s_casemanager = new System.Windows.Forms.TextBox();
             this.account_status = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.upload_photo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
@@ -50,6 +50,8 @@
             this.th = new System.Windows.Forms.CheckBox();
             this.f = new System.Windows.Forms.CheckBox();
             this.s = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -145,14 +147,15 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Student Photo";
             // 
-            // button1
+            // upload_photo
             // 
-            this.button1.Location = new System.Drawing.Point(172, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
+            this.upload_photo.Location = new System.Drawing.Point(172, 267);
+            this.upload_photo.Name = "upload_photo";
+            this.upload_photo.Size = new System.Drawing.Size(75, 23);
+            this.upload_photo.TabIndex = 11;
+            this.upload_photo.Text = "Browse";
+            this.upload_photo.UseVisualStyleBackColor = true;
+            this.upload_photo.Click += new System.EventHandler(this.upload_photo_Click);
             // 
             // label7
             // 
@@ -190,6 +193,7 @@
             this.cancel_btn.TabIndex = 15;
             this.cancel_btn.Text = "Cancel";
             this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // m
             // 
@@ -251,11 +255,21 @@
             this.s.Text = "Saturday";
             this.s.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(172, 163);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 581);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.s);
             this.Controls.Add(this.f);
             this.Controls.Add(this.th);
@@ -266,7 +280,7 @@
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.upload_photo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.account_status);
             this.Controls.Add(this.s_casemanager);
@@ -280,6 +294,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddStudent";
             this.Text = "Add New Student";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +313,7 @@
         private System.Windows.Forms.TextBox s_casemanager;
         private System.Windows.Forms.ComboBox account_status;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button upload_photo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button save_btn;
@@ -309,5 +324,6 @@
         private System.Windows.Forms.CheckBox th;
         private System.Windows.Forms.CheckBox f;
         private System.Windows.Forms.CheckBox s;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
