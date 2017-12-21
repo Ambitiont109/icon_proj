@@ -31,6 +31,15 @@
             this.admin_form = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.s_table = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.s = new System.Windows.Forms.CheckBox();
             this.f = new System.Windows.Forms.CheckBox();
             this.th = new System.Windows.Forms.CheckBox();
@@ -75,15 +84,6 @@
             this.admin_user = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.admin_form.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.s_table)).BeginInit();
@@ -154,6 +154,59 @@
             this.s_table.Name = "s_table";
             this.s_table.Size = new System.Drawing.Size(1063, 236);
             this.s_table.TabIndex = 23;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Student ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Student Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 120F;
+            this.Column3.HeaderText = "Student Phone";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 120;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 150F;
+            this.Column4.HeaderText = "Student Case Manager";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 110F;
+            this.Column5.HeaderText = "Account Status";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 110;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Student Photo";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 140F;
+            this.Column7.HeaderText = "Student FingerPrints";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 140;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Created_On";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Login Days";
+            this.Column9.Name = "Column9";
             // 
             // s
             // 
@@ -329,6 +382,7 @@
             this.edit_s_btn.TabIndex = 3;
             this.edit_s_btn.Text = "Edit Selected";
             this.edit_s_btn.UseVisualStyleBackColor = true;
+            this.edit_s_btn.Click += new System.EventHandler(this.edit_s_btn_Click);
             // 
             // del_s_btn
             // 
@@ -338,6 +392,7 @@
             this.del_s_btn.TabIndex = 2;
             this.del_s_btn.Text = "Delete Selected";
             this.del_s_btn.UseVisualStyleBackColor = true;
+            this.del_s_btn.Click += new System.EventHandler(this.del_s_btn_Click);
             // 
             // add_ns_btn
             // 
@@ -567,59 +622,6 @@
             this.label14.Size = new System.Drawing.Size(87, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "Admin Username";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Student ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Student Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 120F;
-            this.Column3.HeaderText = "Student Phone";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 120;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 150F;
-            this.Column4.HeaderText = "Student Case Manager";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 110F;
-            this.Column5.HeaderText = "Account Status";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 110;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Student Photo";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 140F;
-            this.Column7.HeaderText = "Student FingerPrints";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 140;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Created_On";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Login Days";
-            this.Column9.Name = "Column9";
             // 
             // AdminForm
             // 

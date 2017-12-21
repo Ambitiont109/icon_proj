@@ -142,5 +142,52 @@ namespace WebRider
                 MessageBox.Show("Add Student Successfully");
             }
         }
+
+        private void del_s_btn_Click(object sender, EventArgs e)
+        {
+            int index = s_table.SelectedRows[0].Index;
+            Console.WriteLine(s_table[0, index].Value.GetType());
+            string value = s_table[0, index].Value.ToString();
+            int id = Int32.Parse(value);
+            string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
+            string sql = "delete from students_accounts where Student_ID=" + id+";";
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlCommand cmd = new MySqlCommand(sql, cnn);
+            MySqlDataReader reader;
+            cnn.Open();
+            reader = cmd.ExecuteReader();
+            cnn.Close();
+            Console.WriteLine(sql);
+        }
+
+        private void edit_s_btn_Click(object sender, EventArgs e)
+        {
+            int index = s_table.SelectedRows[0].Index;
+            string value = s_table[0, index].Value.ToString();
+            int id = Int32.Parse(value);
+            student_name_input.Text = s_table[1, index].Value.ToString();
+            student_phone_input.Text = s_table[2, index].Value.ToString();
+            student_case_input.Text = s_table[3, index].Value.ToString();
+            account_combo.Text = s_table[4, index].Value.ToString();
+            string[] data = s_table[8, index].Value.ToString().Split(',');
+            Console.WriteLine(s_table[8,index].Value.ToString());
+            for (int i = 0; i < data.Length-1; i++)
+            {
+                Console.WriteLine(data[i]);
+                if (data[i] == "M")
+                    m.Checked = true;
+                if (data[i] == "T")
+                    t.Checked = true;
+                if (data[i] == "W")
+                    w.Checked = true;
+                if (data[i] == "Th")
+                    th.Checked = true;
+                if (data[i] == "F")
+                    f.Checked = true;
+                if (data[i] == "S")
+                    s.Checked = true;
+
+            }
+        }
     }
 }
