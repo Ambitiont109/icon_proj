@@ -80,6 +80,7 @@ namespace WebRider
             if(e.Status == true)//Verified 
             {
                 String student_id = (String)verificationUserControl.VerifiedObject;
+                MessageBox.Show("Logged In");
                 show_login_student_info(student_id);
             }
             //if(e.Status)
