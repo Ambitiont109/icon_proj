@@ -41,7 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.upload_photo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Fingerprint_scan = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.cancel_btn = new System.Windows.Forms.Button();
             this.m = new System.Windows.Forms.CheckBox();
@@ -51,7 +51,9 @@
             this.f = new System.Windows.Forms.CheckBox();
             this.s = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fingerpicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fingerpicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,14 +168,15 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Student Finger Print";
             // 
-            // button2
+            // Fingerprint_scan
             // 
-            this.button2.Location = new System.Drawing.Point(172, 431);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Scan";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Fingerprint_scan.Location = new System.Drawing.Point(172, 431);
+            this.Fingerprint_scan.Name = "Fingerprint_scan";
+            this.Fingerprint_scan.Size = new System.Drawing.Size(75, 23);
+            this.Fingerprint_scan.TabIndex = 13;
+            this.Fingerprint_scan.Text = "Scan";
+            this.Fingerprint_scan.UseVisualStyleBackColor = true;
+            this.Fingerprint_scan.Click += new System.EventHandler(this.Fingerprint_scan_Click);
             // 
             // save_btn
             // 
@@ -264,11 +267,21 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // fingerpicture
+            // 
+            this.fingerpicture.Location = new System.Drawing.Point(172, 327);
+            this.fingerpicture.Name = "fingerpicture";
+            this.fingerpicture.Size = new System.Drawing.Size(121, 98);
+            this.fingerpicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fingerpicture.TabIndex = 22;
+            this.fingerpicture.TabStop = false;
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 581);
+            this.Controls.Add(this.fingerpicture);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.s);
             this.Controls.Add(this.f);
@@ -278,7 +291,7 @@
             this.Controls.Add(this.m);
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Fingerprint_scan);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.upload_photo);
             this.Controls.Add(this.label6);
@@ -295,6 +308,7 @@
             this.Name = "AddStudent";
             this.Text = "Add New Student";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fingerpicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,7 +329,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button upload_photo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Fingerprint_scan;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.CheckBox m;
@@ -325,5 +339,6 @@
         private System.Windows.Forms.CheckBox f;
         private System.Windows.Forms.CheckBox s;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox fingerpicture;
     }
 }

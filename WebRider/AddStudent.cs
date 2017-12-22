@@ -21,10 +21,13 @@ namespace WebRider
         string db_name_text = "test";
         string adminname = null;
         string student_cur_photo_path = "";
+        byte[] FingerPrint;
+        DPFP.Sample sample;
         public AddStudent(string admin_name)
         {
             InitializeComponent();
             this.adminname = admin_name;
+            this.sample = null;
         }
         private string MoveCopy(String source, String target)
         {
@@ -73,7 +76,16 @@ namespace WebRider
             else
             {
                 photo_path = MoveCopy(student_cur_photo_path, photo_path);
+                photo_path = Path.GetFileName(photo_path);
             }
+            byte[] temp = { 1, 2, 3, 1, 6 };
+            this.FingerPrint = temp;
+            /*
+            if(this.sample == null)
+            {
+                MessageBox.Show("Didn't Capture FingerPrint");
+                return;
+            }*/
             if (m.Checked)
                 l_day += "M,";
             if (t.Checked)
@@ -88,13 +100,14 @@ namespace WebRider
                 l_day += "S,";
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             string sql = "insert into students_accounts (Student_ID, Student_Name, Student_Phone, Student_Case_Manager, Account_Status, Student_Photo, Student_FingerPrints, Login_Days, Created_On, Created_By) value ('" +
-                student_id_text + "','" + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + photo_path + "','" + "','"
+                student_id_text + "','" + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + photo_path + "'," +"@byteData"+ ",'"
                 + l_day+ "','" + thisday.ToString("yyyyy-MM-dd") + "','" + this.adminname + "');";
 
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             MySqlDataReader reader;
             cnn.Open();
+            cmd.Parameters.Add(new MySqlParameter("@byteData", this.FingerPrint));
             reader = cmd.ExecuteReader();
             cnn.Close();
             Console.WriteLine(sql);
@@ -117,6 +130,21 @@ namespace WebRider
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void Fingerprint_scan_Click(object sender, EventArgs e)
+        {
+            Registration reg = new Registration();
+            if(reg.ShowDialog() == DialogResult.OK)
+            {
+                this.sample = reg.fingerPrintRegUserControl.showed_sample;
+                this.FingerPrint = reg.fingerPrintRegUserControl.FingerPrint;
+                DrawPicture(FingerPrintUtility.ConvertSampleToBitmap(this.sample));
+            }
+        }
+        private void DrawPicture(Bitmap bitmap)
+        {
+            fingerpicture.Image = new Bitmap(bitmap, fingerpicture.Size); // fit the image into the picture box
         }
     }
 }
