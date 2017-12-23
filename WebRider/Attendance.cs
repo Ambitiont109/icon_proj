@@ -14,17 +14,29 @@ namespace WebRider
 {
     public partial class Attendance : Form
     {
-        public Attendance()
+        public string host_text;
+        public string port_text;
+        public string db_user_text;
+        public string db_pass_text;
+        public string db_name_text;
+        StartForm parent;
+        public Attendance(StartForm parent)
         {
             InitializeComponent();
+            this.parent = parent;
             verificationUserControl.VerificationStatusChanged += new StatusChangedEventHandler(on_status_changed);
             ValidateUser();
-            
+            host_text = parent.host_text;
+            port_text = parent.port_text;
+            db_user_text = parent.db_user_text;
+            db_pass_text = parent.db_pass_text;
+            db_name_text = parent.db_name_text;
+
         }
         void ValidateUser()
         {
             string sql = "select Student_FingerPrints,Student_ID from students_accounts ";
-            string connectionString = "server=localhost;database=test;uid=root;";
+            string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             try
@@ -75,7 +87,8 @@ namespace WebRider
         {
             student_id = "2";
             string sql = "select * from students_accounts where Student_ID = "+student_id;
-            string connectionString = "server=localhost;database=test;uid=root;";
+            string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
+            DateTime thisday = DateTime.Now;
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             try
@@ -83,6 +96,7 @@ namespace WebRider
                 cnn.Open();
                 // MessageBox.Show("connection open!");
                 MySqlDataReader reader = cmd.ExecuteReader();
+                sql = "";
                 while (reader.Read())
                 {
                     String Student_Id = reader.GetString("Student_ID");
@@ -90,7 +104,7 @@ namespace WebRider
                     String student_phone = reader.GetString("Student_Phone");
                     String Accound_Status = reader.GetString("Account_Status");
                     String Student_photo_path = reader.GetString("Student_Photo");
-
+                    String student_case_manager = reader.GetString("Student_Case_Manager");
                     string path = Path.Combine(Environment.CurrentDirectory, @"Photos\", Student_photo_path);
                     pictureBox1.Image = new Bitmap(path);
                     textBox1.Text = Student_Id;
@@ -99,6 +113,13 @@ namespace WebRider
                     textBox4.Text = Accound_Status;                 
                 }
                 cnn.Close();
+                if(sql != "")
+                {
+                    cnn.Open();
+                    cmd = new MySqlCommand(sql, cnn);
+                    cmd.ExecuteReader();
+                    cnn.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -108,7 +129,7 @@ namespace WebRider
 
         private void admin_link_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginForm lf = new LoginForm();
+            LoginForm lf = new LoginForm(parent);
             lf.Show();
         }
     }

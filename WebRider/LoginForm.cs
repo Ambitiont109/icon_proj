@@ -13,8 +13,10 @@ namespace WebRider
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        StartForm parent;
+        public LoginForm(StartForm parent)
         {
+            this.parent = parent;
             InitializeComponent();
         }
 
@@ -24,7 +26,7 @@ namespace WebRider
             List<string> u_list = new List<string>();
             List<string> p_list = new List<string>();
             string sql = "select * from admin_accounts ";
-            string connectionString = "server=localhost;database=test;uid=root;";
+            string connectionString = "server=" + parent.host_text + ";port=" + parent.port_text + ";database=" + parent.db_name_text + ";uid=" + parent.db_user_text + ";pwd=" + parent.db_pass_text + ";";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
             try
@@ -43,7 +45,7 @@ namespace WebRider
                     if (u_list.ElementAt(i) == username_input.Text)
                         if (p_list.ElementAt(i) == password_input.Text)
                         {
-                            AdminForm af = new AdminForm(username_input.Text);
+                            AdminForm af = new AdminForm(username_input.Text,parent);
                             af.Show();
                         }
                 }

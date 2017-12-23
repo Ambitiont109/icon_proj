@@ -30,6 +30,10 @@
         {
             this.admin_form = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.fingerprint_picture_box = new System.Windows.Forms.PictureBox();
+            this.photo_picture_box = new System.Windows.Forms.PictureBox();
+            this.Fingerprint_scan = new System.Windows.Forms.Button();
+            this.upload_photo = new System.Windows.Forms.Button();
             this.s_table = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +79,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.detects_btn = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -86,6 +89,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.admin_form.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fingerprint_picture_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.photo_picture_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_table)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -106,6 +111,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.fingerprint_picture_box);
+            this.tabPage1.Controls.Add(this.photo_picture_box);
+            this.tabPage1.Controls.Add(this.Fingerprint_scan);
+            this.tabPage1.Controls.Add(this.upload_photo);
             this.tabPage1.Controls.Add(this.s_table);
             this.tabPage1.Controls.Add(this.s);
             this.tabPage1.Controls.Add(this.f);
@@ -136,6 +145,46 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Manage Students";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // fingerprint_picture_box
+            // 
+            this.fingerprint_picture_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fingerprint_picture_box.Location = new System.Drawing.Point(626, 357);
+            this.fingerprint_picture_box.Name = "fingerprint_picture_box";
+            this.fingerprint_picture_box.Size = new System.Drawing.Size(100, 120);
+            this.fingerprint_picture_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fingerprint_picture_box.TabIndex = 26;
+            this.fingerprint_picture_box.TabStop = false;
+            // 
+            // photo_picture_box
+            // 
+            this.photo_picture_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.photo_picture_box.Location = new System.Drawing.Point(503, 358);
+            this.photo_picture_box.Name = "photo_picture_box";
+            this.photo_picture_box.Size = new System.Drawing.Size(100, 120);
+            this.photo_picture_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photo_picture_box.TabIndex = 26;
+            this.photo_picture_box.TabStop = false;
+            // 
+            // Fingerprint_scan
+            // 
+            this.Fingerprint_scan.Location = new System.Drawing.Point(632, 499);
+            this.Fingerprint_scan.Name = "Fingerprint_scan";
+            this.Fingerprint_scan.Size = new System.Drawing.Size(75, 23);
+            this.Fingerprint_scan.TabIndex = 25;
+            this.Fingerprint_scan.Text = "Scan";
+            this.Fingerprint_scan.UseVisualStyleBackColor = true;
+            this.Fingerprint_scan.Click += new System.EventHandler(this.Fingerprint_scan_Click);
+            // 
+            // upload_photo
+            // 
+            this.upload_photo.Location = new System.Drawing.Point(503, 499);
+            this.upload_photo.Name = "upload_photo";
+            this.upload_photo.Size = new System.Drawing.Size(75, 23);
+            this.upload_photo.TabIndex = 24;
+            this.upload_photo.Text = "Browse";
+            this.upload_photo.UseVisualStyleBackColor = true;
+            this.upload_photo.Click += new System.EventHandler(this.upload_photo_Click);
             // 
             // s_table
             // 
@@ -529,7 +578,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.detects_btn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -539,25 +587,15 @@
             this.tabPage3.Text = "Detect Scanner";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(254, 129);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "No Detected";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label12.ForeColor = System.Drawing.Color.Maroon;
             this.label12.Location = new System.Drawing.Point(254, 95);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 13);
+            this.label12.Size = new System.Drawing.Size(111, 13);
             this.label12.TabIndex = 1;
-            this.label12.Text = "OK";
+            this.label12.Text = "Press Detect Scanner";
             // 
             // detects_btn
             // 
@@ -567,6 +605,7 @@
             this.detects_btn.TabIndex = 0;
             this.detects_btn.Text = "Detect Scanner";
             this.detects_btn.UseVisualStyleBackColor = true;
+            this.detects_btn.Click += new System.EventHandler(this.detects_btn_Click);
             // 
             // tabPage4
             // 
@@ -635,6 +674,8 @@
             this.admin_form.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fingerprint_picture_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.photo_picture_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_table)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -687,7 +728,6 @@
         private System.Windows.Forms.Button ss_btn;
         private System.Windows.Forms.Button ts_btn;
         private System.Windows.Forms.Button detects_btn;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox admin_pass;
         private System.Windows.Forms.TextBox admin_user;
@@ -704,5 +744,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.PictureBox fingerprint_picture_box;
+        private System.Windows.Forms.PictureBox photo_picture_box;
+        private System.Windows.Forms.Button Fingerprint_scan;
+        private System.Windows.Forms.Button upload_photo;
     }
 }
