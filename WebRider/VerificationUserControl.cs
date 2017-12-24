@@ -86,7 +86,7 @@ namespace WebRider
                         {
                             this.VerifiedObject = Samples[template];
                             verified = true;
-                            SetPrompt("Verified.");
+                            SetPrompt("Logged In");
                             //Stop();
                         }
                     }
@@ -184,8 +184,7 @@ namespace WebRider
         }
 
         public void OnReaderDisconnect(object Capture, string ReaderSerialNumber)
-        {
-            this.IsVerificationComplete = true;
+        {            
             SetPrompt("Fingerprint reader disconnected.");
         }
 

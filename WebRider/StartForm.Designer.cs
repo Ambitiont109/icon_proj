@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.student_login = new System.Windows.Forms.Button();
             this.administrator = new System.Windows.Forms.Button();
-            this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).BeginInit();
             this.SuspendLayout();
             // 
             // student_login
@@ -56,11 +52,6 @@
             this.administrator.UseVisualStyleBackColor = true;
             this.administrator.Click += new System.EventHandler(this.administrator_Click);
             // 
-            // visualStyler1
-            // 
-            this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
-            this.visualStyler1.LoadVisualStyle(null, "Office2007 (Blue).vssf");
-            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -72,7 +63,6 @@
             this.Name = "StartForm";
             this.Text = "Start";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -81,7 +71,6 @@
 
         private System.Windows.Forms.Button student_login;
         private System.Windows.Forms.Button administrator;
-        private SkinSoft.VisualStyler.VisualStyler visualStyler1;
     }
 }
 

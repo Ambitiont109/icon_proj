@@ -204,23 +204,6 @@ namespace WebRider
                     template.Serialize(s);
                     this.FingerPrint = s.ToArray();
                     this.IsRegistrationComplete = true;
-/*
-
-                    using (SqlConnection con = new SqlConnection(Helper.GetConnection()))
-                    {
-                        con.Open();
-                        string query = @"INSERT INTO Users VALUES (@FirstName,
-                            @LastName, @Thumb, @DateAdded)";
-                        using (SqlCommand cmd = new SqlCommand(query, con))
-                        {
-                            cmd.Parameters.AddWithValue("@FirstName", "");
-                            cmd.Parameters.AddWithValue("@LastName", "");
-                            cmd.Parameters.AddWithValue("@Thumb", FingerPrint);
-                            cmd.Parameters.AddWithValue("@DateAdded", DateTime.Now);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Added!");
-                        }
-                    }*/
                 }));
             }
         }

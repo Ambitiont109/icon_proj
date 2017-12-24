@@ -25,13 +25,13 @@ namespace WebRider
             InitializeComponent();
             this.parent = parent;
             verificationUserControl.VerificationStatusChanged += new StatusChangedEventHandler(on_status_changed);
-            ValidateUser();
+
             host_text = parent.host_text;
             port_text = parent.port_text;
             db_user_text = parent.db_user_text;
             db_pass_text = parent.db_pass_text;
             db_name_text = parent.db_name_text;
-
+            ValidateUser();
         }
         void ValidateUser()
         {
@@ -49,8 +49,8 @@ namespace WebRider
                     
                     if (reader["Student_FingerPrints"] != null)
                     {                        
-                        byte[] fingerPrint = { 2,3,4,5};
-                        //byte[] fingerPrint = (byte[])reader["Student_FingerPrints"];
+                        //byte[] fingerPrint = { 2,3,4,5};
+                        byte[] fingerPrint = (byte[])reader["Student_FingerPrints"];
                         String student_id = reader.GetString("Student_ID");
                         verificationUserControl.Samples.Add(new DPFP.Template(new MemoryStream(fingerPrint)), student_id);
                     }
@@ -78,14 +78,14 @@ namespace WebRider
             if(e.Status == true)//Verified 
             {
                 String student_id = (String)verificationUserControl.VerifiedObject;
-                MessageBox.Show("Logged In");
+                //MessageBox.Show("Logged In");
                 show_login_student_info(student_id);
             }
             //if(e.Status)
         }
         private void show_login_student_info(String student_id)
         {
-            student_id = "2";
+            //student_id = "2";
             string sql = "select * from students_accounts where Student_ID = "+student_id;
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             DateTime thisday = DateTime.Now;
@@ -110,7 +110,8 @@ namespace WebRider
                     textBox1.Text = Student_Id;
                     textBox2.Text = student_name;
                     textBox3.Text = student_phone;
-                    textBox4.Text = Accound_Status;                 
+                    textBox4.Text = Accound_Status;
+                    sql = "INSERT INTO `attendance` VALUES ('2', '2017-12-14', 'Frank Smith', '(333) 666-5544', 'Joe Dow', '07:13:00', '15:31:00', 'Yes')";
                 }
                 cnn.Close();
                 if(sql != "")

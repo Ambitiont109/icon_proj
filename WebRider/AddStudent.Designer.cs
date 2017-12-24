@@ -105,6 +105,7 @@
             // 
             this.s_id.Location = new System.Drawing.Point(172, 18);
             this.s_id.Name = "s_id";
+            this.s_id.ReadOnly = true;
             this.s_id.Size = new System.Drawing.Size(133, 20);
             this.s_id.TabIndex = 5;
             // 

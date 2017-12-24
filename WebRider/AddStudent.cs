@@ -28,6 +28,22 @@ namespace WebRider
             InitializeComponent();
             this.adminname = admin_name;
             this.sample = null;
+            string sql = "select max(Student_Id) from students_accounts";
+            string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlCommand cmd = new MySqlCommand(sql, cnn);
+            cnn.Open();
+            int id = 0;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader[0] == DBNull.Value)
+                    id = 1;
+                else
+                    id = reader.GetInt32(0) +1;
+            }
+            s_id.Text = id.ToString();
+            cnn.Close();
         }
         private string MoveCopy(String source, String target)
         {
@@ -78,14 +94,14 @@ namespace WebRider
                 photo_path = MoveCopy(student_cur_photo_path, photo_path);
                 photo_path = Path.GetFileName(photo_path);
             }
-            byte[] temp = { 1, 2, 3, 1, 6 };
-            this.FingerPrint = temp;
-            /*
+            //byte[] temp = { 1, 2, 3, 1, 6 };
+            //this.FingerPrint = temp;
+            
             if(this.sample == null)
             {
                 MessageBox.Show("Didn't Capture FingerPrint");
                 return;
-            }*/
+            }
             if (m.Checked)
                 l_day += "M,";
             if (t.Checked)

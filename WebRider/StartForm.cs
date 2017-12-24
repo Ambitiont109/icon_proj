@@ -30,14 +30,16 @@ namespace WebRider
         private void administrator_Click(object sender, EventArgs e)
         {
             LoginForm lf = new LoginForm(this);
-            lf.Show();
+            lf.ShowDialog();            
             Console.WriteLine(this.db_name_text);
         }
 
         private void student_login_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             Attendance attendance_form = new Attendance(this);
-            attendance_form.Show();
+            attendance_form.ShowDialog();
+            this.Close();
             attendance_form.WindowState = FormWindowState.Maximized;
         }
     }

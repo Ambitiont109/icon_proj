@@ -18,6 +18,7 @@ namespace WebRider
         {
             this.parent = parent;
             InitializeComponent();
+            //parent.Visible = false;
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -45,8 +46,11 @@ namespace WebRider
                     if (u_list.ElementAt(i) == username_input.Text)
                         if (p_list.ElementAt(i) == password_input.Text)
                         {
+                            this.Visible = false;
+                            parent.Visible = false;
                             AdminForm af = new AdminForm(username_input.Text,parent);
-                            af.Show();
+                            af.ShowDialog();
+                            parent.Close();
                         }
                 }
                 cnn.Close();
@@ -54,12 +58,14 @@ namespace WebRider
             catch (Exception ex)
             {
                 MessageBox.Show("can't open connection!");
+
             }
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            //this.Visible = false;
+            //parent.Visible = true;
+            this.Close();
         }
     }
 }

@@ -268,7 +268,7 @@ namespace WebRider
                     s.Checked = true;
             }
             string sql = "select Student_FingerPrints,Student_Photo from students_accounts where Student_ID = '" + id.ToString()+"'";
-            string connectionString = "server=localhost;database=test;uid=root;";
+            string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             string photo_path="";
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);

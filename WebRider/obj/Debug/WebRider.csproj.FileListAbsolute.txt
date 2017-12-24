@@ -44,3 +44,5 @@ C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\obj\Debug\WebRi
 C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\obj\Debug\WebRider.Properties.Resources.resources
 C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\obj\Debug\WebRider.VerificationUserControl.resources
 C:\Users\panda\Documents\12.19kang(C#)\AttendanceSystem\WebRider\obj\Debug\WebRider.csproj.GenerateResource.Cache
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.Registration.resources
+C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.RegistrationUserControl.resources
