@@ -117,7 +117,7 @@ namespace WebRider
             string connectionString = "server=" + host_text + ";port=" + port_text + ";database=" + db_name_text + ";uid=" + db_user_text + ";pwd=" + db_pass_text + ";";
             string sql = "insert into students_accounts (Student_ID, Student_Name, Student_Phone, Student_Case_Manager, Account_Status, Student_Photo, Student_FingerPrints, Login_Days, Created_On, Created_By) value ('" +
                 student_id_text + "','" + student_name_text + "','" + student_phone_text + "','" + student_case_text + "','" + account_text + "','" + photo_path + "'," +"@byteData"+ ",'"
-                + l_day+ "','" + thisday.ToString("yyyyy-MM-dd") + "','" + this.adminname + "');";
+                + l_day+ "','" + thisday.ToString("yyyy-MM-dd") + "','" + this.adminname + "');";
 
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);

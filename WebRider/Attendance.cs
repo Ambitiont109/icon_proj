@@ -60,9 +60,9 @@ namespace WebRider
             }
             catch (Exception ex)
             {
-                MessageBox.Show("can't open connection!"+ex.ToString());
+                MessageBox.Show(ex.Message);                
             }
-
+            show_login_student_info("2");
         }
         private void load_attendance_form(object sender, EventArgs e)
         {
@@ -91,6 +91,7 @@ namespace WebRider
             DateTime thisday = DateTime.Now;
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlCommand cmd = new MySqlCommand(sql, cnn);
+            MySqlConnection cnn1 = new MySqlConnection(connectionString);
             try
             {
                 cnn.Open();
@@ -111,7 +112,41 @@ namespace WebRider
                     textBox2.Text = student_name;
                     textBox3.Text = student_phone;
                     textBox4.Text = Accound_Status;
-                    sql = "INSERT INTO `attendance` VALUES ('2', '2017-12-14', 'Frank Smith', '(333) 666-5544', 'Joe Dow', '07:13:00', '15:31:00', 'Yes')";
+
+                    String today = DateTime.Today.ToString("yyyy-MM-dd");
+                    DateTime current_time = DateTime.Now;
+                    DateTime attendance_time = new DateTime(current_time.Year, current_time.Month, current_time.Day, 7, 30, 0);
+
+                    
+                    cnn1.Open();
+                    sql = "SELECT * From attendance where Student_Id = {0} AND Current_Date = {1}";
+                    sql = String.Format(sql, Student_Id, today);
+                    MySqlCommand cmd1 = new MySqlCommand(sql, cnn1);
+                    int searched_row = Convert.ToInt32(cmd1.ExecuteScalar());
+                    cnn1.Close();
+                    if (searched_row <=0)
+                    {
+                        sql = "INSERT INTO `attendance` VALUES ('2', '2017-12-14', 'Frank Smith', '(333) 666-5544', 'Joe Dow', '07:13:00', '15:31:00', 'Yes')";
+                        sql = "INSERT INTO `attendance` VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')";
+
+                        if (current_time > attendance_time)
+                            sql = String.Format(sql, Student_Id, today, student_name, student_phone, student_case_manager, current_time.ToLongTimeString(), "NULL", "NO");
+                        else
+                            sql = String.Format(sql, Student_Id, today, student_name, student_phone, student_case_manager, current_time.ToLongTimeString(), "NULL", "YES");
+                        cnn1.Open();
+                        cmd1 = new MySqlCommand(sql, cnn1);
+                        cmd1.ExecuteScalar();
+                        cnn1.Close();
+                    }
+                    else
+                    {
+                        sql = "UPDATE attendance SET Logged_Out = {0} WHERE Studnet_Id = {1} AND Current_Date = {2}";
+                        sql = String.Format(sql, current_time.ToLongTimeString(), Student_Id,today);
+                        cnn1.Open();
+                        cmd1 = new MySqlCommand(sql, cnn1);
+                        cmd1.ExecuteScalar();
+                        cnn1.Close();
+                    }
                 }
                 cnn.Close();
                 if(sql != "")
@@ -124,7 +159,7 @@ namespace WebRider
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error in Loadin Database:\n" + ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 

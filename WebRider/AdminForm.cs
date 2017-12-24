@@ -60,7 +60,7 @@ namespace WebRider
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //s_table.Columns.Add(chk);
+                    //s_table.Columns.Add(chk);                    
                     s_table.Rows.Add(reader.GetInt32("Student_ID"), reader.GetString("Student_Name"), reader.GetString("Student_Phone"),
                         reader.GetString("Student_Case_Manager"), reader.GetString("Account_Status"), reader.GetString("Student_Photo"),
                         reader.GetString("Student_FingerPrints"), reader.GetString("Created_On").Split(' ')[0], reader.GetString("Login_Days"));
@@ -70,7 +70,7 @@ namespace WebRider
             }
             catch (Exception ex)
             {
-                MessageBox.Show("not connection");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -222,6 +222,12 @@ namespace WebRider
 
         private void del_s_btn_Click(object sender, EventArgs e)
         {
+            if (s_table.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("You Didn't Select Student\n");
+                return;
+            }
+                
             int index = s_table.SelectedRows[0].Index;
             Console.WriteLine(s_table[0, index].Value.GetType());
             string value = s_table[0, index].Value.ToString();

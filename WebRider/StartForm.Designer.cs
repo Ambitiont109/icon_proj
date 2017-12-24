@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.student_login = new System.Windows.Forms.Button();
             this.administrator = new System.Windows.Forms.Button();
             this.SuspendLayout();

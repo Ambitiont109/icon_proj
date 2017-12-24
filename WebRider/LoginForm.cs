@@ -51,14 +51,15 @@ namespace WebRider
                             AdminForm af = new AdminForm(username_input.Text,parent);
                             af.ShowDialog();
                             parent.Close();
+                            return;
                         }
                 }
                 cnn.Close();
+                MessageBox.Show("Invalid UserName or Password!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("can't open connection!");
-
             }
         }
 

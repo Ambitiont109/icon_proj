@@ -7,12 +7,10 @@ C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRi
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\DPFPShrNET.dll
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\DPFPVerNET.dll
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\MySql.Data.dll
-C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\SkinSoft.VisualStyler.dll
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\DPFPCtlXWrapperNET.dll
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\DPFPCtlXTypeLibNET.dll
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\DPFPShrXTypeLibNET.dll
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\MySql.Data.xml
-C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\bin\Debug\SkinSoft.VisualStyler.xml
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.csprojResolveAssemblyReference.cache
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.AddStudent.resources
 C:\Users\Alexandr\Downloads\Employers\webrider\MYSOULTION\AttendanceSystem\WebRider\obj\Debug\WebRider.AdminForm.resources
